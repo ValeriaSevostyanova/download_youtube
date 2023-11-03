@@ -5,10 +5,15 @@ def Download(link):
     youtubeObject = youtubeObject.streams.get_highest_resolution()
     try:
         youtubeObject.download()
-        print("Download is completed successfully")
+        return("Download is completed successfully")
     except:
-        print("An error has occurred")
+        return("An error has occurred")
     
 
 link = input("Enter the YouTube video URL: ")
-print(Download(link))
+try:
+    print(Download(link))
+
+except Exception as e:
+    print('Error! Try again!')
+    
